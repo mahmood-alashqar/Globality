@@ -4,42 +4,50 @@
 
 <body style="display: flex; flex-direction: column; height: 100vh">
 <header th:replace="fragment :: header"></header>
-<input id="mysearch" name="searchitem" type="search" />
-<div style="width: 20%;margin: auto;margin-top: 5%;" th:each="user :${users}">
-    <span th:text="${user.getUserName()}"></span>
-    <br>
-    <form th:action="'/following/' + ${user.getUser_id()}" method="post" >
 
-        <input type="submit" value="Follow">
-    </form>
-    <br>
-    <form th:action="'/unFollowing/' + ${user.getUser_id()}" method="post" >
+<h4>Search</h4>
 
-        <input type="submit" value="UnFollow">
-    </form>
-    <div th:switch="${users}">
-        <h2 th:case="null">No users yet!</h2>
-        <div th:case="*">
-            <h2>Users</h2>
-            <table>
-                <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr th:each="user : ${users}">
-                    <td th:text="${user.name}"></td>
-                    <td th:text="${user.email}"></td>
-                    <td><a th:href="@{/edit/{id}(id=${user.id})}">Edit</a></td>
-                    <td><a th:href="@{/delete/{id}(id=${user.id})}">Delete</a></td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
+<input id="username" name="username" type="search" placeholder="Search people" style="width: 20%;margin-top: 5%;"
+       onclick='javascript: window.open("test4?abcd="+ document.getElementById("search").value);'/>
+
+<a href="/search?username=username">Search</a>
+
+
+<!--<div style="width: 20%;margin: auto;margin-top: 5%;" th:each="user :${users}">-->
+<!--    <span th:text="${user.getUserName()}"></span>-->
+<!--    <br>-->
+<!--    <form th:action="'/following/' + ${user.getUser_id()}" method="post" >-->
+
+<!--        <input type="submit" value="Follow">-->
+<!--    </form>-->
+<!--    <br>-->
+<!--    <form th:action="'/unFollowing/' + ${user.getUser_id()}" method="post" >-->
+
+<!--        <input type="submit" value="UnFollow">-->
+<!--    </form>-->
+<!--    <div th:switch="${users}">-->
+<!--        <h2 th:case="null">No users yet!</h2>-->
+<!--        <div th:case="*">-->
+<h2>Users</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!--                <tr th:each="user : ${users}">-->
+    <!--                    <td th:text="${user.name}"></td>-->
+    <!--                    <td th:text="${user.email}"></td>-->
+    <!--                    <td><a th:href="@{/edit/{id}(id=${user.id})}">Edit</a></td>-->
+    <!--                    <td><a th:href="@{/delete/{id}(id=${user.id})}">Delete</a></td>-->
+    <!--                </tr>-->
+    </tbody>
+</table>
+</div>
         <p><a href="/signup">Add a new user</a></p>
     </div>
 </div>

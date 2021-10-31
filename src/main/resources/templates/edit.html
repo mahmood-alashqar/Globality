@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="fragment :: head" xmlns:th="http://www.w3.org/1999/xhtml"></head>
+<body style="display: flex; flex-direction: column; height: 100vh">
+<header th:replace="fragment :: header"></header>
+<form method="post" th:action="'/'+${userInfo.id}" th:object="${userInfo}">
+    <input id="firstName" placeholder="Enter First Name" required th:field="*{userName}" type="text"/>
+    <input id="email" placeholder="Enter Email" required th:field="*{email}" type="text"/>
+    <input id="phoneNumber" placeholder="Enter Phone Number" required th:field="*{phoneNumber}" type="text"/>
+
+    <select id="role" required th:field="*{roles}">
+        <option hidden value="">Select a role</option>
+        <option>GUEST</option>
+        <option>USER</option>
+        <option>ADMIN</option>
+    </select>
+    <input id="activeFlag" type="hidden" th:field="*{active}" value='true'>
+    <input type="submit" value="Update"
+           onclick="document.getElementById('activeFlag').value='true'">
+    <input type="submit" value="Delete"
+           onclick="document.getElementById('activeFlag').value='false'">
+
+</form>
+<footer th:replace="fragment :: footer"></footer>
+</body>
+</html>
