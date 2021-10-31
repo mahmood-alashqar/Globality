@@ -1,5 +1,6 @@
-package com.example.globality.Users;
+package com.example.globality.Infrastructure;
 
+import com.example.globality.Domain.UsersModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,4 +1,4 @@
-package com.example.globality.Users;
+package com.example.globality.Domain;
 
 import javax.persistence.*;
 import java.util.List;

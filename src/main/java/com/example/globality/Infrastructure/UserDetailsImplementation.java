@@ -1,7 +1,6 @@
 package com.example.globality.Infrastructure;
 
-import com.example.globality.Users.UsersModel;
-import com.example.globality.Users.UsersRepository;
+import com.example.globality.Domain.UsersModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;

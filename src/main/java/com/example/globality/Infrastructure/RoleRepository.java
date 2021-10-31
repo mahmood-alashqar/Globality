@@ -1,5 +1,6 @@
-package com.example.globality.Users;
+package com.example.globality.Infrastructure;
 
+import com.example.globality.Domain.Roles;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

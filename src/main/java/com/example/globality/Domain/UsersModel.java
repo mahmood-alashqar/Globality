@@ -1,4 +1,4 @@
-package com.example.globality.Users;
+package com.example.globality.Domain;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
